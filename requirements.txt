@@ -1,0 +1,41 @@
+# ============================================
+# Sentinel-fraud-ml — Dependencias del proyecto
+# Python 3.12.7
+# ============================================
+
+# --- Core de datos ---
+pandas==2.2.2
+numpy==1.26.4
+pyarrow==17.0.0
+
+# --- Machine Learning ---
+scikit-learn==1.5.1
+
+# --- Optimización de hiperparámetros ---
+optuna==3.6.1
+
+# --- Tracking de experimentos ---
+mlflow==2.16.2
+dagshub==0.5.5
+python-dotenv==1.0.1
+
+# --- Interpretabilidad ---
+shap==0.46.0
+lime==0.2.0.1
+
+# --- Monitoreo y drift ---
+evidently==0.4.40
+
+# --- Dashboard ---
+streamlit==1.38.0
+plotly==5.24.0
+
+# --- Notebooks ---
+jupyter==1.0.0
+nbconvert==7.16.4
+ipykernel==6.29.5
+
+# --- Calidad de código y testing ---
+pytest==8.3.3
+black==24.8.0
+ruff==0.6.5

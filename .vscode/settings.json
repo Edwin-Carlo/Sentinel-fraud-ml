@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "uv run python",
+    "python.terminal.activateEnvironment": false
+}
