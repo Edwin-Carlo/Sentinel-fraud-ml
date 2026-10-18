@@ -1,0 +1,25 @@
+# ============================================================
+# Sentinel Fraud ML — Docker Compose
+# Orquesta API (FastAPI) + Dashboard (Streamlit)
+# ============================================================
+version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: sentinel_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app_monitoring:/app/app_monitoring
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+  dashboard:
+    build: .
+    container_name: sentinel_dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./app_monitoring:/app/app_monitoring
+      - ./data:/app/data
+    command: streamlit run app_monitoring/dashboard.py --server.port 8501 --server.address 0.0.0.0

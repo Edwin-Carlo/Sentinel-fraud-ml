@@ -8,6 +8,10 @@ pandas==2.2.2
 numpy==1.26.4
 pyarrow==17.0.0
 
+# --- Visualización ---
+matplotlib==3.11.2
+seaborn==0.13.2
+
 # --- Machine Learning ---
 scikit-learn==1.5.1
 
@@ -39,3 +43,10 @@ ipykernel==6.29.5
 pytest==8.3.3
 black==24.8.0
 ruff==0.6.5
+
+# --- API ---
+fastapi==0.143.3
+uvicorn==0.54.0
+
+# --- Testing ---
+pytest==8.3.3
