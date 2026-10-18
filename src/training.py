@@ -205,3 +205,24 @@ def load_model(path: str | Path):
     if not path.exists():
         raise FileNotFoundError(f"No se encontró el modelo: {path}")
     return joblib.load(path)
+
+
+
+def get_sample_weights(y: pd.Series | np.ndarray) -> np.ndarray:
+    """Calcula pesos de muestra balanceados para clasificación desbalanceada.
+
+    Asigna mayor peso a la clase minoritaria para que el modelo
+    preste más atención a los fraudes durante el entrenamiento.
+
+    Args:
+        y: Etiquetas de la clase (0/1).
+
+    Returns:
+        Array de pesos, uno por muestra.
+
+    Notas:
+        - Se usa `compute_sample_weight("balanced", y)` de sklearn.
+        - El peso de la clase minoritaria se multiplica por (n_mayoritaria / n_minoritaria).
+    """
+    from sklearn.utils.class_weight import compute_sample_weight
+    return compute_sample_weight(class_weight="balanced", y=y)
